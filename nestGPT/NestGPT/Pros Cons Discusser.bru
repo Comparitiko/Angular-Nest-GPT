@@ -1,0 +1,15 @@
+meta {
+  name: Pros Cons Discusser
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{API_URL}}/gpt/pros-cons-discusser
+  body: formUrlEncoded
+  auth: none
+}
+
+body:form-urlencoded {
+  prompt: ¿Qué es mejor, una PC o una Laptop?
+}

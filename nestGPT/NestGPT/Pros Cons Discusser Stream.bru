@@ -1,0 +1,15 @@
+meta {
+  name: Pros Cons Discusser Stream
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{API_URL}}/gpt/pros-cons-discusser-stream
+  body: formUrlEncoded
+  auth: none
+}
+
+body:form-urlencoded {
+  prompt: ¿Qué es mejor, Google Cloud o AWS?
+}

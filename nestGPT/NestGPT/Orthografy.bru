@@ -1,0 +1,16 @@
+meta {
+  name: Orthografy
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{API_URL}}/gpt/orthography-check
+  body: formUrlEncoded
+  auth: none
+}
+
+body:form-urlencoded {
+  prompt: Yó vibo e Granada, una ciudad pequeña que tiene monumentos muy importantes como la Alhambra. Aquí la comida es deliciosa y son famosos el gazpacho, el rebujito y el salmorejo.
+  ~maxTokens: 100
+}
