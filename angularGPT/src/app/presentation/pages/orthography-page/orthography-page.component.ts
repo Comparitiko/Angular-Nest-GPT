@@ -4,7 +4,10 @@ import {
   inject,
   signal,
 } from '@angular/core';
-import { Info, Message } from '@app/interfaces/message.interfaces';
+import {
+  OrthographyInfo,
+  OrthographyMessage,
+} from '@app/interfaces/orthography-message.interface';
 import { ChatMessageComponent } from '@app/presentation/components/chat-bubbles/chat-message/chat-message.component';
 import { MyMessageComponent } from '@app/presentation/components/chat-bubbles/my-message/my-message.component';
 import { GptMessageOrthographyComponent } from '@components/chat-bubbles/gpt-message-orthography/gpt-message-orthography.component';
@@ -30,7 +33,7 @@ import { OpenAiService } from '@services/openai.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class OrthographyPageComponent {
-  public messages = signal<Message[]>([]);
+  public messages = signal<OrthographyMessage[]>([]);
   public isLoading = signal(false);
   public openAiService = inject(OpenAiService);
 
@@ -45,7 +48,7 @@ export class OrthographyPageComponent {
     });
   }
 
-  private newMessage(prompt: string, isGpt: boolean, info?: Info) {
+  private newMessage(prompt: string, isGpt: boolean, info?: OrthographyInfo) {
     this.messages.update((messages) => {
       if (info) {
         return [

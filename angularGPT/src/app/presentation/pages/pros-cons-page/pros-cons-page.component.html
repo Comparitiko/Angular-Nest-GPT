@@ -1,1 +1,31 @@
-<p>pros-cons-page works!</p>
+@let messagesLocal = messages();
+
+<div class="chat-container">
+  <div class="chat-messages">
+
+    <div class="grid gap-y-2">
+
+      <!-- Chat messages -->
+      <app-chat-message [text]="'¿Que deseas comparar?'" />
+
+      @for (message of messagesLocal; track $index) {
+      @if (message.isGpt) {
+      <app-chat-message [text]="message.text" />
+      }@else {
+      <app-my-message [text]="message.text" />
+      }
+      }
+
+      @if (isLoading()) {
+      <app-typing-loader />
+      }
+
+    </div>
+
+  </div>
+
+  <!-- MessageBox -->
+
+  <app-text-message-box [placeholder]="'Escribe lo que quieras'" (onMessage)="handleMessage($event)" />
+
+</div>

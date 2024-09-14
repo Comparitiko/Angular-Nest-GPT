@@ -1,0 +1,16 @@
+meta {
+  name: Translate
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{API_URL}}/gpt/translate
+  body: formUrlEncoded
+  auth: none
+}
+
+body:form-urlencoded {
+  prompt: Hello world
+  lang: Español
+}
