@@ -1,0 +1,16 @@
+meta {
+  name: Text to Audio
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{API_URL}}/gpt/text-to-audio
+  body: formUrlEncoded
+  auth: none
+}
+
+body:form-urlencoded {
+  prompt: Saludos a todos, mi nombre es Gabriel Collado, soy estudiante de un grado superio de desarrollo de aplicaciones web
+  voice: alloy
+}
