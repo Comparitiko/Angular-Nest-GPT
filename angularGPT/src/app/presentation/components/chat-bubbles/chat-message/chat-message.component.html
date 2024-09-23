@@ -10,6 +10,9 @@
       <markdown>
         {{ text() }}
       </markdown>
+     @if (this.audioUrl()) {
+      <audio controls autoplay class="w-full" [src]="this.audioUrl()"></audio>
+     }
     </div>
 
   </div>
